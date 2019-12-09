@@ -1,2 +1,2 @@
 # hvac_monitor
-Pi Based Script Utilizing MQTT to monitor HVAC System
+Python Based Script Utilizing PIZero and MQTT to relay monitored HVAC System sensors
