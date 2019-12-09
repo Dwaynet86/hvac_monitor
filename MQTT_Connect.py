@@ -8,6 +8,6 @@ MQTT_PASS = "DEVMQTT"
 MQTT_CLIENT = "HVAC-MONITOR"
 
 client = mqtt.Client(MQTT_CLIENT)
-client.connect (MQTT_SERVER, MQTT_PORT)
+client.connect (MQTT_SERVER, port=MQTT_PORT)
 client.close()
 
