@@ -12,3 +12,7 @@ client.username_pw_set(MQTT_USER, MQTT_PASS)
 client.connect (MQTT_SERVER, port=MQTT_PORT)
 
 
+
+client.disconnect()
+
+
