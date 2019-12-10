@@ -47,5 +47,7 @@ client.on_publish = on_publish
 client.on_subscribe = on_subscribe
 
 client.loop_start()
-client.publish("hassio/hvac_monitor/status/","supply:70",2)
+while True:
+  sleep(10)
+  client.publish("hassio/hvac_monitor/status/","supply:70",2)
   
