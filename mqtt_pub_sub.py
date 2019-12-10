@@ -1,3 +1,6 @@
+import os
+
+
 MQTT_SERVER = "10.0.0.20"
 MQTT_PORT = 1883
 MQTT_PATH = "hassio/hvac_monitor/#"
