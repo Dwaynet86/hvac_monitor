@@ -35,7 +35,7 @@ def on_disconnect(client, userdata, msg):
     print("Disconnecting...")
     client.loop_stop()
     client.disconnect()
-    sys.exit()
+    exit()
   
 client = mqtt.Client(MQTT_CLIENT)
 client.username_pw_set(MQTT_USER, MQTT_PASS)
