@@ -15,7 +15,7 @@ def on_message(client, userdata, msg):
   if msg.payload.decode() == "Disconnect":
     print("Disconnecting...")
     client.disconnect()
-  print(msg.topic)
+  print(msg.topic + msg.payload)
 
     
 def on_publish(client, userdata, flags):
