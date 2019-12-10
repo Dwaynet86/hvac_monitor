@@ -2,7 +2,7 @@
 
 import paho.mqtt.client as mqtt
 from mqtt_connect import *
-import time
+from time import sleep
 
 
 def on_connect(client, userdata, flags, rc):
