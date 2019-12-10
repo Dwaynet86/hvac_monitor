@@ -25,7 +25,7 @@ def on_publish(client, userdata, flags):
 def on_subscribe(client, userdata, flags):
   print("subscribed")  
 
-def set_temperature(mosq, obj, msg):
+def set_temperature(client, userdata, msg):
     # This callback will only be called for messages with topics that match
     # $SYS/broker/messages/#
     print("set_temperature")
