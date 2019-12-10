@@ -3,7 +3,7 @@
 import paho.mqtt.client as mqtt
 from mqtt_pub_sub import *
 from time import sleep
-import os
+
 
 
 #setup  
