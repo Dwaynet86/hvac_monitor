@@ -1,7 +1,8 @@
-#!/usr/bin/python3
+#! /usr/bin/env python3
 
 import paho.mqtt.client as mqtt
 from mqtt_connect import *
+import time
 
 
 def on_connect(client, userdata, flags, rc):
@@ -45,3 +46,8 @@ client.on_publish = on_publish
 client.on_subscribe = on_subscribe
 
 client.loop_forever()
+
+while True:
+  sleep(25)
+  client.publish("hassio/hvac_monitor/status/","supply:70","2")
+  
