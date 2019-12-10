@@ -29,7 +29,7 @@ def on_set(client, userdata, msg):
     
     print("MESSAGES: " + msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
 
-def on_disconnect():
+def on_disconnect(client, userdata, msg):
   if msg.payload.decode() == "Disconnect":
     print("Disconnecting...")
     client.disconnect()
