@@ -33,6 +33,7 @@ def on_set(client, userdata, msg):
 def on_disconnect(client, userdata, msg):
   if msg.payload.decode() == "Disconnect":
     print("Disconnecting...")
+    client.loop_stop()
     client.disconnect()
   
 client = mqtt.Client(MQTT_CLIENT)
@@ -45,9 +46,6 @@ client.on_message = on_message
 client.on_publish = on_publish
 client.on_subscribe = on_subscribe
 
-client.loop_forever()
-
-while True:
-  print("forever")
-  client.publish("hassio/hvac_monitor/status/","supply:70","2")
+client.loop_start()
+client.publish("hassio/hvac_monitor/status/","supply:70",2)
   
