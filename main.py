@@ -3,7 +3,7 @@
 import paho.mqtt.client as mqtt
 from mqtt_connect import *
 from time import sleep
-from sys import exit
+import os
 
 def on_connect(client, userdata, flags, rc):
   print("Connected with result code "+str(rc))
