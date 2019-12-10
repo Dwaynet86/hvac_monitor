@@ -6,7 +6,6 @@ from mqtt_connect import *
 
 def on_connect(client, userdata, flags, rc):
   print("Connected with result code "+str(rc))
-  #print("Subscribing..." + MQTT_PATH)
   client.subscribe("#")
 
 def on_message(client, userdata, msg):
@@ -26,17 +25,17 @@ def on_publish(client, userdata, flags):
 def on_subscribe(client, userdata, flags):
   print("subscribed")  
 
-def set_temperature(client, userdata, msg):
+def on_set(client, userdata, msg):
     # This callback will only be called for messages with topics that match
-    # $SYS/broker/messages/#
-    print("set_temperature")
+    # hvac_monitor/set/#
+    
     print("MESSAGES: " + msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
   
   
 client = mqtt.Client(MQTT_CLIENT)
 client.username_pw_set(MQTT_USER, MQTT_PASS)
 client.connect (MQTT_SERVER, port=MQTT_PORT)
-client.message_callback_add("hvac_monitor/set/temperature", set_temperature)
+client.message_callback_add("hvac_monitor/set/#", on_set)
 client.on_connect = on_connect
 client.on_message = on_message
 client.on_publish = on_publish
