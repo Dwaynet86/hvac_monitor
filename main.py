@@ -6,8 +6,8 @@ from mqtt_connect import *
 
 def on_connect(client, userdata, flags, rc):
   print("Connected with result code "+str(rc))
-  print("Subscribing..." + MQTT_PATH)
-  client.subscribe("$SYS/#")
+  #print("Subscribing..." + MQTT_PATH)
+  client.subscribe("#")
 
 def on_message(client, userdata, msg):
   if msg.payload.decode() == "Hello world!":
