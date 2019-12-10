@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 import paho.mqtt.client as mqtt
-from mqtt_connect import *
+from mqtt_pub_sub import *
 from time import sleep
 import os
 
