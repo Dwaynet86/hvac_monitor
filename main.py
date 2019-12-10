@@ -37,7 +37,7 @@ def on_disconnect(client, userdata, msg):
     print("Loop Stopped..")
     client.disconnect()
     print("Disconnected...")
-    
+    quit()
   
 client = mqtt.Client(MQTT_CLIENT)
 client.username_pw_set(MQTT_USER, MQTT_PASS)
@@ -54,5 +54,4 @@ while True:
   sleep(10)
   client.publish("hassio/hvac_monitor/status/","supply:70",2)
   
-print("Exiting...")  
-exit()
+
