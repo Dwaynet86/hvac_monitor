@@ -48,6 +48,6 @@ client.on_subscribe = on_subscribe
 client.loop_forever()
 
 while True:
-  sleep(25)
+  print("forever")
   client.publish("hassio/hvac_monitor/status/","supply:70","2")
   
