@@ -32,10 +32,12 @@ def on_set(client, userdata, msg):
 
 def on_disconnect(client, userdata, msg):
   if msg.payload.decode() == "Disconnect":
-    print("Disconnecting...")
+    
     client.loop_stop()
+    print("Loop Stopped..")
     client.disconnect()
-    exit()
+    print("Disconnected...")
+    sys.exit()
   
 client = mqtt.Client(MQTT_CLIENT)
 client.username_pw_set(MQTT_USER, MQTT_PASS)
