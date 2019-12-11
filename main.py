@@ -4,6 +4,18 @@ import paho.mqtt.client as mqtt
 from mqtt_pub_sub import *
 from time import sleep
 
+def read_sensors()
+  print("reading sensor data...")
+  supply_temperature = read_adc(1)
+  return_temperature = read_adc(2)
+  
+  supply_humidity = read_adc(3)
+  return_humidity = read_adc(4)
+  
+  supply_pressure = read_adc(5)
+  return_pressure = read_adc(6)
+  
+  return
 
 
 #setup  
