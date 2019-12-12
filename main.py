@@ -1,20 +1,25 @@
 #! /usr/bin/env python3
 
 import paho.mqtt.client as mqtt
+from read_sensors import * 
 from mqtt_pub_sub import *
 from time import sleep
 
+
+supply_temperature = 10
+supply_humidity = 10
+supply_pressure = 10
+return_temperature = 5
+return_humidity = 5
+return_pressure = 5
+delta_temperature = 1
+static_pressure = 0.41
+cfm = 500
+
 def read_sensors()
   print("reading sensor data...")
-  supply_temperature = read_adc(1)
-  return_temperature = read_adc(2)
-  
-  supply_humidity = read_adc(3)
-  return_humidity = read_adc(4)
-  
-  supply_pressure = read_adc(5)
-  return_pressure = read_adc(6)
-  
+  supply_temperature, supply_humidity, supply_pressure = (70, 54, 20.8)
+  return_temperature, return_humidity, return_pressure = (20, 40, 15.4)
   return
 
 
@@ -34,6 +39,11 @@ client.loop_start()
 #Main loop
 while True:
   sleep(10)
-  client.publish("hassio/hvac_monitor/status/","supply:70",2)
+  #client.publish("hassio/hvac_monitor/status/","supply:70",2)
+  publish_data = "supply temperature: " + supply_temperature + ", supply humidity: " + supply_humidity + ", supply pressure: " + supply_pressure
+  
+  client.publish("hassio/hvac_monitor/status/",publish_data,2)
+  print (supply_temperature, supply_humidity, supply_pressure)
+  print (return_temperature, return_humidity, return_pressure)
   
 
