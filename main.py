@@ -16,7 +16,7 @@ delta_temperature = 1
 static_pressure = 0.41
 cfm = 500
 
-def get_sensor_data()
+def get_sensor_data():
   print("reading sensor data...")
   supply_temperature, supply_humidity, supply_pressure = (70, 54, 20.8)
   return_temperature, return_humidity, return_pressure = (20, 40, 15.4)
