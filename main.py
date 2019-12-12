@@ -16,7 +16,7 @@ delta_temperature = 1
 static_pressure = 0.41
 cfm = 500
 
-def read_sensors()
+def get_sensor_data()
   print("reading sensor data...")
   supply_temperature, supply_humidity, supply_pressure = (70, 54, 20.8)
   return_temperature, return_humidity, return_pressure = (20, 40, 15.4)
@@ -39,6 +39,7 @@ client.loop_start()
 #Main loop
 while True:
   sleep(10)
+  get_sensor_data()
   #client.publish("hassio/hvac_monitor/status/","supply:70",2)
   publish_data = "supply temperature: " + supply_temperature + ", supply humidity: " + supply_humidity + ", supply pressure: " + supply_pressure
   
