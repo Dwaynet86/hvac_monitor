@@ -41,7 +41,7 @@ while True:
   sleep(10)
   get_sensor_data()
   #client.publish("hassio/hvac_monitor/status/","supply:70",2)
-  publish_data = "supply temperature: " + supply_temperature + ", supply humidity: " + supply_humidity + ", supply pressure: " + supply_pressure
+  publish_data = "supply temperature: " + str(supply_temperature) + ", supply humidity: " + str(supply_humidity) + ", supply pressure: " + str(supply_pressure)
   
   client.publish("hassio/hvac_monitor/status/",publish_data,2)
   print (supply_temperature, supply_humidity, supply_pressure)
