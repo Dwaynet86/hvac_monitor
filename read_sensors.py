@@ -15,7 +15,7 @@ calibration_params = bme280.load_calibration_params(bus, return_address)
 # compensated_reading object
 
 
-def read_adc(address):
+def read_bme(address):
   if 1:
     #Supply sensor
     supply_data = bme280.sample(bus, supply_address, calibration_params)
